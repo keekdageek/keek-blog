@@ -12,7 +12,7 @@ activate :blog do |blog|
   # Matcher for blog source files
   blog.sources = "blog/{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
+  blog.layout = "blog"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
@@ -24,9 +24,9 @@ activate :blog do |blog|
   blog.calendar_template = "calendar.html"
 
   # Enable pagination
-  # blog.paginate = true
-  # blog.per_page = 10
-  # blog.page_link = "page/{num}"
+  blog.paginate = true
+  blog.per_page = 10
+  blog.page_link = "page/{num}"
 end
 
 page "/feed.xml", layout: false
@@ -68,8 +68,6 @@ page "/feed.xml", layout: false
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
-# Reload the browser automatically whenever files change
-activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -79,10 +77,40 @@ activate :livereload
 # end
 
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
+
+set :tag_meta, {
+  cucumber: {
+      label: 'Cucumber',
+      img: 'cucumber_logo.png',
+      url: 'https://cukes.info'
+  },
+  phantomjs: {
+      label: 'PhantomJS',
+      img: 'phantomjs_logo.png',
+      url: 'http://phantomjs.org/'
+  },
+  :"docker swarm" => {
+      label: 'Docker Swarm',
+      img: 'docker-swarm_logo.png',
+      url: 'https://github.com/docker/swarm/'
+  },
+  ruby: {
+      label: 'Ruby',
+      img: 'ruby_logo.png',
+      url: 'https://www.ruby-lang.org/en/'
+  }
+}
+
+activate :syntax
+
+# sprockets.import_asset 'favicon.png'
+
+# Reload the browser automatically whenever files change
+configure :development do
+  activate :livereload, ignore: ['/.idea']
+end
 
 # Build-specific configuration
 configure :build do
@@ -100,4 +128,17 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+  activate :favicon_maker do |f|
+    f.icons = {
+        "_favicon_template.png" => [
+            { icon: "favicon.png", size: "16x16" },
+            { icon: "favicon.ico", size: "64x64,32x32,24x24,16x16" },
+        ]
+    }
+  end
 end
+
+
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :haml, :format => :html5
+

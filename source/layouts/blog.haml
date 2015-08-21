@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    = partial "partials/head"
+  %title= 'keekdageek' # {' - ' + current_article.title unless current_article.nil?}
+  %body
+    -#.sidebar
+    -#  = partial "partials/sidebar"
+    #main{:role => "main"}
+      = partial "partials/nav"
+      %h2= current_article.title
+      %p= partial "partials/tags_date", :locals => {article: current_article }
+      .post-content
+        = find_and_preserve do
+          = yield
+      = partial "partials/footer"

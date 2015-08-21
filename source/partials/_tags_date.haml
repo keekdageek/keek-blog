@@ -1,0 +1,4 @@
+.title_date
+  = partial 'partials/tag_logos', locals: { tags: article.tags }
+  .date
+    %strong= article.date.strftime('%b %e, %Y')

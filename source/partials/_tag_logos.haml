@@ -1,0 +1,5 @@
+.tag_logos
+  - tags.each do |tag|
+    - meta = tag_meta[tag.to_sym]
+    - if meta
+      = link_to image_tag(meta[:img], alt: meta[:label]), meta[:url], target: '_blank'

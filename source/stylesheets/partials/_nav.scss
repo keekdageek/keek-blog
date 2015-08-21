@@ -8,9 +8,19 @@ nav {
   }
 }
 
-.blog-title {
-  font-size: 1.4em;
-  font-weight: 700;
-  letterspacing: 4px;
-  text-transform: uppercase;
+//.blog-title {
+//  font-size: 1.4em;
+//  font-weight: 700;
+//  letterspacing: 4px;
+//  text-transform: uppercase;
+//}
+
+.masthead-title small {
+  //font-size: 75%;
+  font-weight: 400;
+  color: #afa8ae;
+  letter-spacing: 0;
+  //position: relative;
+  //left: 280px;
+  //bottom: 50px;
 }

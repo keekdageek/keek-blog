@@ -8,3 +8,46 @@
 
 @import "partials/nav";
 @import "partials/footer";
+@import "partials/sidebar";
+
+
+img[alt=Cucumber] { width: 25px; }
+img[alt=PhantomJS] { width: 25px; }
+img[alt="Docker Swarm"] { width: 30px; }
+img[alt=Ruby] { width: 25px; }
+
+.tag_logos {
+  img {
+
+    display: inline-block;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+  }
+}
+
+.title_date {
+  .date {
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+  }
+
+  .tag_logos {
+    display: inline-block;
+  }
+}
+
+a {
+  color: #800000;
+}
+
+a:hover {
+  color: #cca303;
+}
+
+.highlight {
+  background-color: #FFFACD;
+  position: relative;
+  left: 25px;
+  width: 675px;
+}

@@ -12,8 +12,9 @@ per_page: 10
   - page_articles.each_with_index do |article, i|
     %li
       %h3= link_to article.title, article
-      %h3= article.date.strftime('%b %e')
-      %p= article.body
+      %p= partial "partials/tags_date", :locals => {article: article }
+      %p
+        = article.summary(250, '  ...')
 - if paginate
   - if next_page
     %p= link_to 'Next page', next_page
