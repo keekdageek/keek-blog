@@ -15,12 +15,30 @@ nav {
 //  text-transform: uppercase;
 //}
 
-.masthead-title small {
-  //font-size: 75%;
-  font-weight: 400;
-  color: #afa8ae;
-  letter-spacing: 0;
-  //position: relative;
-  //left: 280px;
-  //bottom: 50px;
+.masthead-title {
+
+  display: inline-block;
+  small {
+    //font-size: 75%;
+    font-weight: 400;
+    color: #afa8ae;
+    letter-spacing: 0;
+    //position: relative;
+    //left: 280px;
+    //bottom: 50px;
+  }
 }
+
+.about {
+  a {
+    font-weight: 400;
+    color: #afa8ae;
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+  }
+  a:hover {
+    color: #000000;
+  }
+}
+

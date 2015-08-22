@@ -1,16 +1,20 @@
 !!!
 %html
   %head
+    - set_meta_tags title: current_article.title, description: current_article.data.description, keywords: current_article.tags.join(', ')
     = partial "partials/head"
-  %title= 'keekdageek' # {' - ' + current_article.title unless current_article.nil?}
   %body
     -#.sidebar
     -#  = partial "partials/sidebar"
     #main{:role => "main"}
       = partial "partials/nav"
-      %h2= current_article.title
+      %h1= current_article.title
       %p= partial "partials/tags_date", :locals => {article: current_article }
       .post-content
         = find_and_preserve do
           = yield
+      %h2 Comments
+      = disqus
+      = disqus_count
       = partial "partials/footer"
+    = google_analytics_tag

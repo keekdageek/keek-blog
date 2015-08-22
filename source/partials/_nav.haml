@@ -1,4 +1,6 @@
 %nav
+  - unless current_page.path == 'about.html'
+    .about= link_to('about', "/about.html")
   %h3.masthead-title
     = link_to image_tag( 'kiko_logo_100.png'), "/", :class => 'blog-title'
     %small Just another desert rat in the SF Bay

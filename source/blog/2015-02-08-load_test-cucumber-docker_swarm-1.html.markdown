@@ -1,8 +1,9 @@
 ---
-title:  "Load Testing with Cucumber PhantomJS and Docker Swarm, Part 1"
+title:  "Load Testing with Cucumber and Docker Swarm, Part 1"
 date:   2015-02-08 05:15:29
 comments: True
-tags: cucumber, phantomjs, docker swarm, ruby
+tags: cucumber, docker swarm, ruby, load testing
+description: First blog in a series of how to use Cucumber with Docker to induce load.  This part sets up the codebase to execute Cucumber tests with Ruby, PhantomJS and a simple Docker image.  
 ---
 
 Historically load testing had been pretty straightforward.  Get a list of urls usually from the weblogs and use tools like Siege, Apache Benchmark and JMeter and your off to the races.  This is a valid approach for load testing webservices or sites with that don't do alot of javascript rendering, but javascript heavy sites change the dynamics of your load testing.  Load tests need to open a browser, render the javascript and click on widgets. This two part blog is a simple example of creating load with Cucumber PhantomJS and an array of asynchronous clients on Docker containers.

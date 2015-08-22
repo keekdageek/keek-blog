@@ -1,0 +1,5 @@
+- set_meta_tags title: 'About', description: 'About Francisco Marin\'s blog'
+
+%p Welcome to my blog.  I'm Francisco (kiko) Marin, I've been a software developer here in Silicon Valley for over 15 years.  Started with mostly Java and backend development for the first 8 years or so, then picked up Ruby on Rails and have been working with both technologies ever since.  Since I mostly worked with early round startups I picked up a fair amount of DevOps along the way and that's mostly what I'm doing as my day job now.
+%p= "Feel free to contact me with questions or gigs: #{mail_to 'kiko@keekdageek.com', 'kiko@keekdageek.com' }"
+= partial 'partials/tag_logos', locals: {tags: %w(github twitter facebook linkedin)}

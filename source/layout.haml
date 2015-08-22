@@ -1,8 +1,8 @@
 !!!
 %html
   %head
+    - set_meta_tags description: 'Technical blog covering fun stuff with Ruby and DevOps.'
     = partial "partials/head"
-    %title keekdageek#
   %body
     -#.sidebar
     -#  = partial "partials/sidebar"
@@ -10,7 +10,7 @@
       = partial "partials/nav"
       = yield
       = partial "partials/footer"
-
+    = google_analytics_tag
 
     -#%aside
     -#  %h2 Recent Articles
