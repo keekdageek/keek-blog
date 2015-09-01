@@ -4,6 +4,78 @@
 
 # Time.zone = "UTC"
 
+
+
+set :css_dir, 'stylesheets'
+set :js_dir, 'javascripts'
+set :images_dir, 'images'
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :haml, :format => :html5
+set :tag_meta, {
+                 bundler: {
+                     label: 'Bundler',
+                     img: 'bundler.png',
+                     url: 'http://bundler.io/'
+                 },
+                 cucumber: {
+                     label: 'Cucumber',
+                     img: 'cucumber.png',
+                     url: 'https://cukes.info'
+                 },
+                 :"docker" => {
+                     label: 'Docker',
+                     img: 'docker.png',
+                     url: 'https://www.docker.com/'
+                 },
+                 :"docker compose" => {
+                     label: 'Docker Compose',
+                     img: 'docker-compose.png',
+                     url: 'https://docs.docker.com/compose/'
+                 },
+                 :"docker machine" => {
+                     label: 'Docker Machine',
+                     img: 'docker-machine.png',
+                     url: 'https://docs.docker.com/machine/'
+                 },
+                 :"docker swarm" => {
+                     label: 'Docker Swarm',
+                     img: 'docker-swarm.png',
+                     url: 'https://docs.docker.com/swarm/'
+                 },
+                 facebook: {
+                     label: 'KeekDaGeek @ Facebook',
+                     img: 'facebook.png',
+                     url: 'https://www.facebook.com/pages/KeekDaGeek/249840375103898'
+                 },
+                 github: {
+                     label: 'KeekDaGeek @ Github',
+                     img: 'github.png',
+                     url: 'https://github.com/keekdageek'
+                 },
+                 linkedin: {
+                     label: 'KeekDaGeek @ LinkedIn',
+                     img: 'linkedin.png',
+                     url: 'https://www.linkedin.com/in/keekdageek'
+                 },
+                 phantomjs: {
+                     label: 'PhantomJS',
+                     img: 'phantomjs.png',
+                     url: 'http://phantomjs.org/'
+                 },
+                 ruby: {
+                     label: 'Ruby',
+                     img: 'ruby.png',
+                     url: 'https://www.ruby-lang.org/en/'
+                 },
+                 twitter: {
+                     label: 'KeekDaGeek @ Twitter',
+                     img: 'twitter.png',
+                     url: 'https://twitter.com/_keekdageek'
+                 },
+             }
+
+page "/feed.xml", layout: false
+
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
@@ -28,8 +100,6 @@ activate :blog do |blog|
   blog.per_page = 10
   blog.page_link = "page/{num}"
 end
-
-page "/feed.xml", layout: false
 
 ###
 # Compass
@@ -76,52 +146,6 @@ page "/feed.xml", layout: false
 #   end
 # end
 
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
-
-set :tag_meta, {
-  cucumber: {
-      label: 'Cucumber',
-      img: 'cucumber_logo.png',
-      url: 'https://cukes.info'
-  },
-  phantomjs: {
-      label: 'PhantomJS',
-      img: 'phantomjs_logo.png',
-      url: 'http://phantomjs.org/'
-  },
-  :"docker swarm" => {
-      label: 'Docker Swarm',
-      img: 'docker-swarm_logo.png',
-      url: 'https://github.com/docker/swarm/'
-  },
-  ruby: {
-      label: 'Ruby',
-      img: 'ruby_logo.png',
-      url: 'https://www.ruby-lang.org/en/'
-  },
-  github: {
-      label: 'KeekDaGeek @ Github',
-      img: 'github.png',
-      url: 'https://github.com/keekdageek'
-  },
-  twitter: {
-      label: 'KeekDaGeek @ Twitter',
-      img: 'twitter.png',
-      url: 'https://twitter.com/_keekdageek'
-  },
-  facebook: {
-      label: 'KeekDaGeek @ Facebook',
-      img: 'facebook.png',
-      url: 'https://www.facebook.com/pages/KeekDaGeek/249840375103898'
-  },
-  linkedin: {
-      label: 'KeekDaGeek @ LinkedIn',
-      img: 'linkedin.png',
-      url: 'https://www.linkedin.com/in/keekdageek'
-  }
-}
 
 
 activate :google_analytics do |ga|
@@ -146,11 +170,10 @@ activate :meta_tags
 activate :drafts
 activate :directory_indexes
 
-# sprockets.import_asset 'favicon.png'
-
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+
   config[:file_watcher_ignore] += [
       /\.idea\/.*/,
       /.*\.iml/
@@ -180,14 +203,6 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
-  activate :favicon_maker do |f|
-    f.icons = {
-        "_favicon_template.png" => [
-            { icon: "favicon.png", size: "16x16" },
-            { icon: "favicon.ico", size: "64x64,32x32,24x24,16x16" },
-        ]
-    }
-  end
   activate :disqus do |d|
     # using a different shortname for production builds
     d.shortname = "keekdageek"
@@ -195,6 +210,4 @@ configure :build do
 end
 
 
-set :markdown, :fenced_code_blocks => true, :smartypants => true
-set :haml, :format => :html5
 

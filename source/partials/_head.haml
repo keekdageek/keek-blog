@@ -4,6 +4,7 @@
 = display_meta_tags site: 'KeekDaGeek'
 = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
 %link{ href: 'http://fonts.googleapis.com/css?family=Oxygen:400,300,700', rel: 'stylesheet', type: 'text/css' }
-%link{ rel: "shortcut icon", href: "/images/favicon.png" }
-%link{ rel: "icon", type: "image/ico", href: "/images/favicon.ico" }
+= favicon_tag 'favicon.ico'
+-#%link{ rel: "shortcut icon", href: "/images/favicon.png" }
+-#%link{ rel: "icon", type: "image/ico", href: "/images/favicon.ico" }
 = stylesheet_link_tag "all"

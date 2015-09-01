@@ -11,9 +11,13 @@
 @import "partials/sidebar";
 
 
+img[alt=Bundler] { width: 25px; }
 img[alt=Cucumber] { width: 25px; }
-img[alt=PhantomJS] { width: 25px; }
+img[alt=Docker] { width: 25px; }
+img[alt="Docker Compose"] { width: 30px; }
+img[alt="Docker Machine"] { width: 30px; }
 img[alt="Docker Swarm"] { width: 30px; }
+img[alt=PhantomJS] { width: 25px; }
 img[alt=Ruby] { width: 25px; }
 
 .tag_logos {
